@@ -1,0 +1,11 @@
+div.card-image>img {
+    height: 300px;
+}
+
+div.chip {
+    font-weight: 700;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
