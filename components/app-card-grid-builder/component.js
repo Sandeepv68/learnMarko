@@ -1,7 +1,3 @@
-const WrapSplash = require('wrapsplash');
-
-let UnsplashApi = new WrapSplash(require('../../config/wrapsplash'));
-
 class AppCardBuilder {
     onCreate() {
         let self = this;
