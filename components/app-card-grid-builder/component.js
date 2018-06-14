@@ -15,7 +15,7 @@ class AppCardBuilder {
         let self = this;
         let UnsplashApi = new Unsplash(unsplashConfig);
         let page = 1;
-        let perPage = 6;
+        let perPage = 9;
         let orderBy = 'latest';
         UnsplashApi.listPhotos(page, perPage, orderBy)
             .then(function (result) {

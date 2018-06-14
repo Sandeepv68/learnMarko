@@ -7,9 +7,6 @@ class AppCard {
         }
     }
     onInput(input) {
-        if(!input || !input.data){
-            throw new Error('Error: Cannot render component -> app-card without input.');
-        }
         input = input || {};
         let self = this;
         self.state.input = input.data;
