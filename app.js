@@ -77,7 +77,8 @@ log.info('Application routes initialized');
  * @param {Object} res - The express response object
  * @param {Object} next - The next middleware in the middleware chain
  */
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
+  log.error(`404 error caught`);
   next(createError(404));
 });
 
@@ -88,7 +89,7 @@ app.use(function (req, res, next) {
  * @param {Object} res - The express response object
  * @param {Object} next - The next middleware in the middleware chain
  */
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   /**
    * set locals, only providing error in development
    */
@@ -102,6 +103,7 @@ app.use(function (err, req, res, next) {
   /**
    * render the error page
    */
+  log.error(errorData);
   res.status(err.status || 500);
   res.render('error', errorData);
 });
