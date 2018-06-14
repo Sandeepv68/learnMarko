@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@lasso/marko-taglib": "^1.0.10",
+    "axios": "^0.18.0",
     "compression": "^1.7.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
