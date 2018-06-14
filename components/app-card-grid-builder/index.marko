@@ -1,5 +1,16 @@
-<div class="row">
-  <for(count from 0 to 2)>
-    <app-card/>
-  </for>
-</div>
+<if(state.imageData)>
+  $ var imageData = state.imageData;
+  <div class="row">
+    <for(image in imageData)>
+      <app-card data=image/>
+    </for>
+  </div>
+</if>
+<else>
+  <div class="row">
+    <!-- <for(count from 0 to 2)>
+      <app-card/>
+    </for> -->
+    testing loading
+  </div>
+</else>

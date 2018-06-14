@@ -1,16 +1,20 @@
-<div class="col s12 m4 l4">
-  <div class="card hoverable">
-    <div class="card-image">
-      <img src=(state.imageData ? "" : "img/placeholder.png") alt="photo"/>
-    </div>
-    <div class="card-content">
-      <div class="chip">
-        <img src=(state.imageData ? "" : "img/placeholder-user.png") alt="photographer"/>
-        $ (state.imageData ? "" : "&nbsp:     &nbsp;");
+<if(state.imageData != null)>
+  $ var imageData = state.imageData;
+  <div class="col s12 m4 l4">
+    <div class="card hoverable">
+      <div class="card-image">
+        <img src="${imageData.urls.small}" alt="photo"/>
       </div>
-      <a class="grey lighten-3 waves-effect btn-flat right">
-        <i class=(state.imageData ? "" : "material-icons grey-text")>favorite</i>
-      </a>
+      <div class="card-content">
+        <div class="chip">
+          <img src="${imageData.user.profile_image.small}" alt="photographer"/>
+          ${imageData.user.name}
+        </div>
+        <a class="grey lighten-3 waves-effect btn-flat right">
+          <i class="material-icons grey-text left">favorite</i> ${imageData.likes}
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</if>
+
