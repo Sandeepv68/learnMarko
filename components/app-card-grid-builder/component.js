@@ -17,12 +17,12 @@ class AppCardBuilder {
     }
     onMount() {
         let self = this;
-        UnsplashApi.listPhotos(1, 10, 'latest')
-        .then(function (result) {
-            console.log(result);
-        }).catch(function (e) {
-            console.log(e);
-        });
+        // UnsplashApi.listPhotos(1, 10, 'latest')
+        // .then(function (result) {
+        //     console.log(result);
+        // }).catch(function (e) {
+        //     console.log(e);
+        // });
         console.log(self.state);
     }
 }
