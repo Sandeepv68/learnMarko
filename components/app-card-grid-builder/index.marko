@@ -1,6 +1,6 @@
 <if(state.imageData)>
   $ var imageData = state.imageData;
-  <div class="row">
+  <div key="parent" class="row">
     <for(image in imageData)>
       <app-card data=image/>
     </for>

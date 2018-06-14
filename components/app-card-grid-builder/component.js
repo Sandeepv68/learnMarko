@@ -23,6 +23,14 @@ class AppCardBuilder {
             }).catch(function (e) {
                 console.log(e);
             });
+        window.onscroll = function () {
+            let d = document.documentElement;
+            let offset = d.scrollTop + window.innerHeight;
+            let height = d.offsetHeight;
+            if (offset === height) {
+                           
+            }
+        };
     }
 }
 
