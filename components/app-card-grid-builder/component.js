@@ -5,7 +5,8 @@ class AppCardBuilder {
     onCreate() {
         let self = this;
         self.state = {
-            imageData: null
+            imageData: null,
+            imageDataAppend: null
         };
     }
     onInput() {
@@ -13,24 +14,36 @@ class AppCardBuilder {
     }
     onMount() {
         let self = this;
-        let UnsplashApi = new Unsplash(unsplashConfig);
         let page = 1;
         let perPage = 9;
         let orderBy = 'latest';
+        let UnsplashApi = new Unsplash(unsplashConfig);
         UnsplashApi.listPhotos(page, perPage, orderBy)
             .then(function (result) {
                 self.state.imageData = result.data;;
             }).catch(function (e) {
                 console.log(e);
             });
-        window.onscroll = function () {
+        window.addEventListener('scroll', function () {
             let d = document.documentElement;
             let offset = d.scrollTop + window.innerHeight;
             let height = d.offsetHeight;
             if (offset === height) {
-                           
+                console.log('hit');
+                page = page + 1;
+                UnsplashApi.listPhotos(page, perPage, orderBy)
+                    .then(function (result) {
+                        self.state.imageDataAppend = result.data;
+                    }).catch(function (e) {
+                        console.log(e);
+                    });
+
             }
-        };
+        });
+    }
+    onUpdate(){
+        let self = this;
+        console.log(self.state);
     }
 }
 
