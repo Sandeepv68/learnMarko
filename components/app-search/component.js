@@ -1,13 +1,9 @@
 class AppSearch {
-    constructor() {
-        this.searchQuery = '';
-    }
     getKeyword() {
         let self = this;
         let inputField = self.getEl('search_field');
         let searchButton = self.getEl('search_button');
-        self.searchQuery = inputField.value;
-        if (self.searchQuery.length >= 3) {
+        if (inputField.value.length >= 3) {
             searchButton.classList.remove('hide');
         } else {
             searchButton.classList.add('hide');
@@ -19,7 +15,8 @@ class AppSearch {
      */
     search() {
         let self = this;
-        window.location = window.location.href + `search/${self.searchQuery}`;
+        let inputField = self.getEl('search_field');
+        window.location = window.location.href + `search/${inputField.value}`;
     }
     // emitKeyword() {
     //     let self = this;
