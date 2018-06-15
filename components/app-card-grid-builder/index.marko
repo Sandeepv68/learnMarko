@@ -1,4 +1,4 @@
-<app-search key="search"/>
+<app-search key="search" data=(state.query ? state.query: '')/>
 <if(state.imageData)>
   $ var imageData = state.imageData;
   <div key="parent" class="row">

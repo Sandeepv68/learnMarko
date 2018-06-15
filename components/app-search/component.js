@@ -1,4 +1,14 @@
 class AppSearch {
+    onCreate(){
+        let self = this;
+        self.state = {
+            placeholder: null
+        }
+    }
+    onInput(input){
+        let self = this;
+        self.state.placeholder = input.data;
+    }
     getKeyword() {
         let self = this;
         let inputField = self.getEl('search_field');
