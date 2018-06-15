@@ -41,7 +41,7 @@ class AppCardBuilder {
                                 <img src="${element.urls.small}" alt="photo"/>
                               </div>
                               <div class="card-content">
-                                <div class="chip animate-flicker">
+                                <div class="chip">
                                   <img src="${element.user.profile_image.small}" alt="photographer"/>
                                   ${element.user.name}
                                 </div>
