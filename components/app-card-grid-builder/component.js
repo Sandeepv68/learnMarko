@@ -58,6 +58,10 @@ class AppCardBuilder {
                     });
             }
         });
+        let searchComponent = self.getComponent('search');
+        searchComponent.on('keywordEntered', (event)=>{
+            console.log(event);
+        });
     }
 }
 
