@@ -14,9 +14,12 @@ class AppSearch {
         }
     }
 
+    /**
+     * Redirect to search page with serach query attached
+     */
     search() {
         let self = this;
-        console.log(self.searchQuery);
+        window.location = window.location.href + `search/${self.searchQuery}`;
     }
     // emitKeyword() {
     //     let self = this;
