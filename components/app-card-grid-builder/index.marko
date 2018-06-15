@@ -5,17 +5,6 @@
       <app-card data=image/>
     </for>
   </div>
-  <if(!state.imageDataAppend)>
-    <app-loader/>
-  </if>
-  <else>
-    $ var imageDataAppend = state.imageDataAppend;
-    <div class="row">
-      <for(image in imageDataAppend)>
-        <app-card data=image/>
-      </for>
-    </div>
-  </else>
 </if>
 <else>
   <div class="row">
