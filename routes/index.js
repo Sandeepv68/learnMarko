@@ -1,8 +1,8 @@
 /**
  * Index/main route 
  */
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 /**
  * GET Home route

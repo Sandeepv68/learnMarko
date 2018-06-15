@@ -1,8 +1,11 @@
 /**
  * Search route 
  */
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router({
+  mergeParams: true
+});
+
 
 /**
  * GET Search route
@@ -11,6 +14,8 @@ var router = express.Router();
  * @param {Object} next - The next middleware in the middleware chain
  */
 router.get('/', function(req, res, next) {
+  let query = req.params.query;
+  console.log(query);
   res.render('search');
 });
 
