@@ -64,6 +64,7 @@ class AppCardBuilder {
             UnsplashApi.search(keyword, page, perPage, '', orientation)
                 .then(function (response) {
                     self.state.imageData = response.data.results;
+                    self.setStateDirty('imageData')
                 }).catch(function (e) {
                     console.log(e);
                 });

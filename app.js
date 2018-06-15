@@ -20,6 +20,7 @@ global.log = log;
  * Set up the routes
  */
 const indexRouter = require('./routes/index');
+const searchRouter = require('./routes/search');
 const apiRouter = require('./routes/api');
 
 /**
@@ -68,6 +69,7 @@ log.info('Application middlewares initialized');
  * Set the app to use the routes
  */
 app.use('/', indexRouter);
+app.use('/search', searchRouter);
 app.use('/api', apiRouter);
 log.info('Application routes initialized');
 
