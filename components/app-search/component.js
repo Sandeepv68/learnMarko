@@ -10,11 +10,11 @@ class AppSearch {
         }
     }
 
-    emitKeyword() {
-        let self = this;
-        let inputField = self.getEl('search_field');
-        self.emit('keywordEntered', inputField.value);
-    }
+    // emitKeyword() {
+    //     let self = this;
+    //     let inputField = self.getEl('search_field');
+    //     self.emit('keywordEntered', inputField.value);
+    // }
 }
 
 module.exports = AppSearch;

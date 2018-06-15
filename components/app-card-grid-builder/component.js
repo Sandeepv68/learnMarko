@@ -58,17 +58,17 @@ class AppCardBuilder {
                     });
             }
         });
-        let searchComponent = self.getComponent('search');
-        searchComponent.on('keywordEntered', (keyword) => {
-            let orientation = 'landscape';
-            UnsplashApi.search(keyword, page, perPage, '', orientation)
-                .then(function (response) {
-                    self.state.imageData = response.data.results;
-                    self.setStateDirty('imageData')
-                }).catch(function (e) {
-                    console.log(e);
-                });
-        });
+        // let searchComponent = self.getComponent('search');
+        // searchComponent.on('keywordEntered', (keyword) => {
+        //     let orientation = 'landscape';
+        //     UnsplashApi.search(keyword, page, perPage, '', orientation)
+        //         .then(function (response) {
+        //             self.state.imageData = response.data.results;
+        //             self.setStateDirty('imageData')
+        //         }).catch(function (e) {
+        //             console.log(e);
+        //         });
+        // });
     }
 }
 
