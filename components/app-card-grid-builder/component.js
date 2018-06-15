@@ -59,8 +59,14 @@ class AppCardBuilder {
             }
         });
         let searchComponent = self.getComponent('search');
-        searchComponent.on('keywordEntered', (event)=>{
-            console.log(event);
+        searchComponent.on('keywordEntered', (keyword) => {
+            let orientation = 'landscape';
+            UnsplashApi.search(keyword, page, perPage, '', orientation)
+                .then(function (response) {
+                    self.state.imageData = response.data.results;
+                }).catch(function (e) {
+                    console.log(e);
+                });
         });
     }
 }

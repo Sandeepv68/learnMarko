@@ -136,4 +136,32 @@ UnsplashApi.prototype.listPhotos = function (page, per_page, order_by) {
     return fetchUrl(self, url);
 };
 
+/**
+ * Promise factory to access the Search Photos endpoint of the Unsplash API.
+ * @function search
+ * @memberof UnsplashApi
+ * @param {String} query - The search query (required).
+ * @param {Number} page - The page number of results to fetch (Optional, defaults to 1).
+ * @param {Number} per_page - The number of items per page (Optional, defaults to 10).
+ * @param {Number} collections - The collection ID(‘s) to narrow the search. If multiple, comma-separated (Optional).
+ * @param {String} orientation - Filter search results by photo orientation (Optional, Valid values are landscape, portrait, and squarish, defaults to: landscape).
+ * @returns {Object} - The JSON data object.
+ */
+UnsplashApi.prototype.search = function (query, page, per_page, collections, orientation) {
+    let self = this;
+    if (!availableOrientations.contains(orientation) && orientation !== undefined) {
+        throw new Error('Parameter : orientation has an unsupported value!');
+    }
+    if (query === undefined) {
+        throw new Error('Parameter : query is missing!');
+    }
+    let url = LOCATION + SCHEMA.SEARCH_PHOTOS +
+        '?query=' + (query ? encodeURIComponent(query) : '') +
+        '&page=' + (page && !isNaN(page) ? +page : 1) +
+        '&per_page=' + (per_page && !isNaN(per_page) ? +per_page : 10) +
+        '&collections=' + (collections && !isNaN(collections) ? +collections : '') +
+        '&orientation=' + (orientation ? encodeURIComponent(orientation) : '');
+    return fetchUrl(self, url);
+};
+
 module.exports = UnsplashApi;
