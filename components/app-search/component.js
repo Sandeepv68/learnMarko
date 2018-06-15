@@ -26,7 +26,7 @@ class AppSearch {
     search() {
         let self = this;
         let inputField = self.getEl('search_field');
-        window.location = window.location.href + `search/${inputField.value}`;
+        window.location = window.location.origin + `/search/${inputField.value}`;
     }
     // emitKeyword() {
     //     let self = this;
